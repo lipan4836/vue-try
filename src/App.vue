@@ -24,6 +24,7 @@
       :class="{
         'current-page': page === pageNumber
       }"
+      @click="changePage(pageNumber)"
       >
       {{ pageNumber }}
     </div>
@@ -90,6 +91,10 @@ export default {
         this.isPostsLoading = false;
       }
     },
+    changePage(pageNumber) {
+      this.page = pageNumber
+      this.fetchPosts()
+    },
   },
   mounted() {
     this.fetchPosts();
@@ -108,6 +113,11 @@ export default {
       );
     },
   },
+  watch: {
+    page() {
+      this.fetchPosts()
+    }
+  }
 };
 </script>
 
@@ -138,6 +148,7 @@ export default {
 .page {
   border: 1px solid black;
   padding: 10px;
+  cursor: pointer;
 }
 
 .current-page {
