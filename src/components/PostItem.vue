@@ -1,12 +1,13 @@
 <template>
   <div class="post">
-    <div>
+    <div class="post__body">
       <div>{{ post.id }}</div>
       <div><strong>Название:</strong> {{ post.title }}</div>
       <div><strong>Описание:</strong> {{ post.body }}</div>
     </div>
     <div class="post__btns">
       <my-button @click="$emit('remove', post)">Удалить</my-button>
+      <my-button @click="$emit('remove', post)">Открыть</my-button>
     </div>
   </div>
 </template>
@@ -31,5 +32,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.post__body {
+  padding: 10px;
+}
+
+.post__btns {
+  display: flex;
+  gap: 10px;
 }
 </style>
