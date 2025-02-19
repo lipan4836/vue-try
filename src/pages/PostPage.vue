@@ -81,8 +81,8 @@ export default {
     },
     async loadMorelPosts() {
       try {
-        this.page += 1
-        
+        this.page += 1;
+
         const response = await axios.get(
           'https://jsonplaceholder.typicode.com/posts',
           {
@@ -103,18 +103,18 @@ export default {
   },
   mounted() {
     this.fetchPosts();
-    
+
     const options = {
       rootMargin: '8px',
       threshold: 1.0,
-    }
+    };
     const callback = (entries, observer) => {
       if (entries[0].isIntersecting && this.page < this.totalPage) {
-        this.loadMorelPosts()
+        this.loadMorelPosts();
       }
-    }
-    const observer = new IntersectionObserver(callback, options)
-    observer.observe(this.$refs.observer)
+    };
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(this.$refs.observer);
   },
   computed: {
     sortedPosts() {
@@ -130,9 +130,7 @@ export default {
       );
     },
   },
-  watch: {
-    
-  }
+  watch: {},
 };
 </script>
 
