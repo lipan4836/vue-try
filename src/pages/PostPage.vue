@@ -16,7 +16,7 @@
       v-if="!isPostsLoading"
     />
     <div v-else>Идёт загрузка</div>
-    <div class="observer" v-intersection="loadMorelPosts"></div>
+    <div class="observer" v-intersection="loadMorePosts"></div>
   </div>
 </template>
 
@@ -79,7 +79,7 @@ export default {
         this.isPostsLoading = false;
       }
     },
-    async loadMorelPosts() {
+    async loadMorePosts() {
       try {
         this.page += 1;
 
