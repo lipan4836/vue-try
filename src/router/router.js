@@ -2,8 +2,9 @@ import Main from '@/pages/Main';
 import PostPage from '@/pages/PostPage';
 import About from '@/pages/About';
 import SelectedPost from '@/pages/SelectedPost.vue';
-import SelectedPostStore from '@/pages/SelectedPostStore.vue'; 
+import SelectedPostStore from '@/pages/SelectedPostStore.vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
+import PostPageCompositionApi from '@/pages/PostPageCompositionApi.vue';
 
 const routes = [
   {
@@ -25,6 +26,10 @@ const routes = [
   {
     path: '/store',
     component: SelectedPostStore,
+  },
+  {
+    path: '/composition',
+    component: PostPageCompositionApi,
   },
 ];
 
